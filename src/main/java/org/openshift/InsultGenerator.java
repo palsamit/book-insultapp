@@ -20,7 +20,7 @@ public class InsultGenerator {
 			Connection connection = DriverManager.getConnection(databaseUrl, username, password);
 			if( connection != null ) {
 				String sqlQuery = "select a.string as first, b.string as second, c.string as third from short_adjective a"
-						+ " long_adjective b, noun c order by random() limit 1";
+						+ ", long_adjective b, noun c order by random() limit 1";
 				Statement statement = connection.createStatement();
 				ResultSet rs = statement.executeQuery(sqlQuery);
 				while( rs.next()) {
